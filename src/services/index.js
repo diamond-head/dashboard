@@ -11,6 +11,7 @@ async function getDashboardData() {
       'Content-Type': 'application/json'
     }
   }
+
   try {
     const response = await fetch(`${apiBaseURL}/get-dashboard`, requestOptions);
     if (response.status === 200) {
