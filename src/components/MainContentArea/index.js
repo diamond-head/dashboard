@@ -30,13 +30,17 @@ export default class MainContentArea extends React.PureComponent {
           <LeftSideBar />
         </div>
         <div className='px-0 w-100 h-100'>
-          <Header />
-          {!this.state?.dashboardData && (
-            <div className='w-100 h-100 my-auto mx-auto d-flex'> 
-              <Loader className='text-center mx-auto my-auto w-100'/>
-            </div>
-          )}
-          {this.state?.dashboardData && <MainContent isTabletOrMobile={this.props.isTabletOrMobile} data={this.state?.dashboardData} />}
+          <Header userDetails={{ fullName: 'Brad Cooper' }} />
+          {
+            !this.state?.dashboardData ? 
+              (
+                <div className='w-100 h-100 my-auto mx-auto d-flex'> 
+                  <Loader className='text-center mx-auto my-auto w-100'/>
+                </div>
+              )
+            :
+              <MainContent isTabletOrMobile={this.props.isTabletOrMobile} data={this.state?.dashboardData} />
+          }
         </div> 
       </div>
     );
