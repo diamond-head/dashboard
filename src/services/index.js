@@ -7,9 +7,7 @@ export const dashboardService = {
 async function getDashboardData() {
   const requestOptions = {
     method: "GET",
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    headers: { 'Content-Type': 'application/json' }
   }
 
   try {
